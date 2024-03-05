@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .calculator {
+        width: 250px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .calculator input[type="button"] {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+    }
+    .calculator input[type="text"] {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        text-align: right;
+    }
+</style>
+</head>
+<body>
+
+<div class="calculator">
+    <input type="text" id="result" >
+    <input type="button" value="7" onclick="addToResult('7')">
+    <input type="button" value="8" onclick="addToResult('8')">
+    <input type="button" value="9" onclick="addToResult('9')">
+    <input type="button" value="/" onclick="addToResult('/')">
+    <input type="button" value="4" onclick="addToResult('4')">
+    <input type="button" value="5" onclick="addToResult('5')">
+    <input type="button" value="6" onclick="addToResult('6')">
+    <input type="button" value="*" onclick="addToResult('*')">
+    <input type="button" value="1" onclick="addToResult('1')">
+    <input type="button" value="2" onclick="addToResult('2')">
+    <input type="button" value="3" onclick="addToResult('3')">
+    <input type="button" value="-" onclick="addToResult('-')">
+    <input type="button" value="0" onclick="addToResult('0')">
+    <input type="button" value="." onclick="addToResult('.')">
+    <input type="button" value="=" onclick="calculate()">
+    <input type="button" value="+" onclick="addToResult('+')">
+    <input type="button" value="Clear" onclick="reset()">
+    <button id="printt" onclick="printt()">click me</button>
+</div>
+
+<script>
+    function addToResult(value) {
+        document.getElementById('result').value += value;
+    }
+    const reset=()=>{
+        document.getElementById('result').value="";
+    }
+    function calculate() {
+        var result = eval(document.getElementById('result').value);
+        document.getElementById('result').value = result;
+    }
+    const printt=()=>{
+        window.print();
+    }
+</script>
+</body>
+</html>
